@@ -1,0 +1,32 @@
+
+.global-menu{
+  .center.both;
+  height:33%;
+  width:100%;
+  z-index: 99;
+  display: block;
+  .inner_menu{
+    .scrollbar;
+    .animateEnter(fadeInDown,1s);
+    .animateLeave(fadeOutUp,1s);
+    display: block;
+    position: relative;
+
+    height:100%;
+    width:100%;
+    background: fade(#E7E8EA,97%);
+    display:block!important;
+
+    overflow-y: hidden;
+    .icon_container{
+      .center.both;
+      white-space: nowrap;
+    }
+    i{
+      font-size: 150px;
+      margin-right:70px;
+      color:fade(black,50%);
+    }
+
+  }
+}

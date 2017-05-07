@@ -1,0 +1,7 @@
+<div hm-hold="toggle_alarm($event)" style="width:100%;height:100%">
+<i ng-show="Alarm_On" class="material-icons alarm_status">alarm_on</i>
+<i ng-hide="Alarm_On" class="material-icons alarm_status off">alarm_off</i>
+<div class="clock">
+  {{Time|date:'shortTime'}}
+</div>
+</div>

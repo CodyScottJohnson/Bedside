@@ -1,0 +1,86 @@
+
+<div class="table_main">
+<table >
+  <tr class="title">
+    <th colspan="7">
+      <span>Testimonials</span>
+      <md-button aria-label="menu" ng-click="showDialog({})">
+        <md-icon><i class="material-icons">library_add</i></md-icon>
+      </md-button>
+    </th>
+  </tr>
+<tr class="header">
+  <th>
+    Active
+  </th>
+  <th>
+    Name
+  </th>
+  <th>
+    LBs Lost
+  </th>
+  <th>
+    Before
+  </th>
+  <th>
+    After
+  </th>
+  <th>
+    Testimonial
+  </th>
+  <th>
+
+  </th>
+</tr>
+<tr ng-repeat="testimonial in Data.Testimonials" ng-init="isOpen=FALSE">
+  <td>
+    <md-switch ng-change="saveTestimonial(testimonial)" ng-model="testimonial.Active" aria-label="Switch 1" value=1>
+  </md-switch>
+  </td>
+  <td>
+    {{testimonial.Name}}
+  </td>
+  <td>
+    {{testimonial.Pounds_Lost}}
+  </td>
+  <td>
+    <img ng-src="https://loseyourselfinguatemala.com/API/Open/Media/Images/Testimonials/{{testimonial.Before_Picture}}" />
+  </td>
+  <td>
+    <img ng-src="https://loseyourselfinguatemala.com/API/Open/Media/Images/Testimonials/{{testimonial.After_Picture}}" />
+
+  </td>
+  <td >
+    <div class="testimonial">
+
+    {{testimonial.Testimonial}}
+  </div>
+  </td>
+  <td>
+
+
+    <md-fab-speed-dial   md-open="isOpen" md-direction="right"
+                             class="md-fling">
+            <md-fab-trigger>
+              <md-button aria-label="menu" class="md-fab md-warn">
+                <md-icon><i class="material-icons">more_vert</i></md-icon>
+              </md-button>
+            </md-fab-trigger>
+
+            <md-fab-actions ng-Hide="!isOpen">
+              <md-button aria-label="Twitter" class="md-fab md-raised md-mini">
+                <md-icon><i class="material-icons">pageview</i></md-icon>
+              </md-button>
+              <md-button aria-label="Edit" ng-click="showDialog(testimonial)" class="md-fab md-raised md-mini">
+                <md-icon ><i class="material-icons">mode_edit</i></md-icon>
+              </md-button>
+              <md-button aria-label="Google Hangout" ng-click="deleteTestimonial(testimonial)" class="md-fab md-raised md-mini">
+                <md-icon><i class="material-icons">delete</i></md-icon>
+              </md-button>
+            </md-fab-actions>
+          </md-fab-speed-dial>
+
+  </td>
+</tr>
+</table>
+</div>
